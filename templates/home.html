@@ -1,0 +1,41 @@
+<html>
+     
+    <style>
+        body
+        {
+        background-repeat:no-repeat;
+        background-attached:fixed;
+        background-size:cover;
+        background-image:url({{url_for('static', filename='images.png')}})
+        }
+         
+    </style>
+        
+    <body bgcolor=#d4a3ae>
+    
+        <center>
+
+        <h1> SEED VIABILITY PREDICTION </h1><br>
+
+        <form method="POST", action="{{url_for('home')}}">
+           <b> Num. Months :  <input type="text", name='a', placeholder="enter number of months"> <br><br>
+           Temperature :  <input type="text", name='b', placeholder="enter temperature"> <br><br>
+            Relative Humidity :  <input type="text", name='c', placeholder="enter RH value"> <br><br>
+               Protein value :  <input type="text", name='d', placeholder="enter Protein value"> <br><br>
+               Oil Value :  <input type="text", name='e', placeholder="enter Oil value"> <br><br>
+               Starch value :  <input type="text", name='f', placeholder="enter STarch value"> <br><br>
+               Ash value :  <input type="text", name='g', placeholder="enter Ash value"> <br><br>
+               DM value :  <input type="text", name='h', placeholder="enter DM value"> <br><br>
+               Crude Fibre value :  <input type="text", name='i', placeholder="enter Crude fibre value"> <br><br>
+            IC value : <input type="text", name='j', placeholder="enter IC value"> <br><br><br></b>
+            <input type="submit" , value='Predict!' >
+        </form>
+        
+        <br>
+        <br>
+        {{ prediction_text }}
+
+    </center>
+
+    </body>
+</html>
